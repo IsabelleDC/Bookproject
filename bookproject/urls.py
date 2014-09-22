@@ -8,7 +8,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^home/$', 'book.views.home', name='home'),
+    url(r'^$', 'book.views.home', name='home'),
     url(r'^profile/$', 'book.views.profile', name='profile'),
     url(r'^register/$', 'book.views.register', name='register'),
     url(r'^login/$', 'django.contrib.auth.views.login', name='login'),
