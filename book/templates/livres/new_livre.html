@@ -1,0 +1,14 @@
+{%  extends 'base_template.html' %}
+
+{%  block content %}
+    <form method="post" action=".">
+        {%  csrf_token %}
+        {{ form.as_p }}
+ <a href="{% url 'new_livre' %}">Add a new Book</a>
+        </br>
+        <input type="submit" value="Add location">
+        </form>
+
+
+
+{% endblock content %}
