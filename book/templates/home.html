@@ -2,13 +2,14 @@
 {% load staticfiles %}
 {%  block content %}
 <div class="jumbotron">
-  <h1>Welcome to Wanderful!!</h1>
-  <p>Enjoy and re-discover your world </p>
+  <h1>Welcome to my bookshop!!</h1>
+  <p>Enjoy  </p>
 
 <div>
 
-   <a href="{% url 'location_new' %}" class="btn btn-primary btn-lg" role="button">Add a new favorite place</a>
+   <a href="{% url 'new_livre' %}" class="btn btn-primary btn-lg" role="button">Add a new favorite book</a>
 {#    <div style="background-image: url(/static/img/map.jpg)"></div>#}
+</div>
 </div>
 
 {% endblock content %}

@@ -26,7 +26,7 @@ class Livre(models.Model):
     country = models.CharField(max_length=100)
     zipcode = models.IntegerField(max_length=10, null=True, blank=True)
     categories = models.ManyToManyField(Genre, related_name='livres')
-    # image = models.ImageField(upload_to='location_image', blank=True, null=True)
+    # image = models.ImageField(upload_to='livres_image', blank=True, null=True)
 
     def __unicode__(self):
         return self.name
