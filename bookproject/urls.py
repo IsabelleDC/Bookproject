@@ -20,10 +20,10 @@ urlpatterns = patterns('',
     name='password_reset_confirm'),
     url(r'^reset/done/$', 'django.contrib.auth.views.password_reset_complete', name='password_reset_complete'),
     url(r'^livres/(?P<genre_id>\w+)/$', 'book.views.livres', name='livres'),
-    url(r'^new_livre/$', 'book.views.new_livre', name='new_livre'),
-    url(r'^new_genre/$', 'book.views.new_genre', name='new_genre'),
+    url(r'^livre/new/$', 'book.views.new_livre', name='new_livre'),
+    url(r'^genre/new/$', 'book.views.new_genre', name='new_genre'),
     url(r'^genres/$', 'book.views.genres', name='genres'),
-    # url(r'^map/(?P<location_id>\w+)/$', 'book.views.map', name='map'),
+    url(r'^map/(?P<livre_id>\w+)/$', 'book.views.map', name='map'),
 
 
 

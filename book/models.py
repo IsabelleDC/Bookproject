@@ -20,13 +20,14 @@ class Genre(models.Model):
 
 class Livre(models.Model):
     name = models. CharField(max_length=50)
+    author = models.IntegerField(null=True, blank=True)
     streetnum = models.IntegerField(null=True, blank=True)
     street = models.CharField(max_length=100, null=True, blank=True)
     city = models.CharField(max_length=100, null=True, blank=True)
     country = models.CharField(max_length=100)
     zipcode = models.IntegerField(max_length=10, null=True, blank=True)
-    categories = models.ManyToManyField(Genre, related_name='livres')
-    # image = models.ImageField(upload_to='livres_image', blank=True, null=True)
+    genres = models.ManyToManyField(Genre, related_name='livres')
+    image = models.ImageField(upload_to='livre image', blank=True, null=True)
 
     def __unicode__(self):
         return self.name

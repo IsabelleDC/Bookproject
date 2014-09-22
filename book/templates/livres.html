@@ -7,7 +7,10 @@
     <ul>
 
     {% for livre in livres%}
-    <li><img width='100px'src="/static/img/{{livre.image}}"><a href="{% url 'map' livre.id %}">{{ livre.name }}</a> {{ livre.streetnum }}, {{ livre.street }}, {{ livre.city }}, {{ livre.country }}</li></br>
+
+    <li><img width='100px'src="/static/img/{{livre.image}}"><a href="{% url 'map' livre.id %}">
+
+        {{ livre.name }} {{ livre.streetnum }}, {{ livre.street }}, {{ livre.city }}, {{ livre.country }} </br>
     {% endfor %}
 
     </ul>

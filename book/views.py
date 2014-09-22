@@ -48,7 +48,7 @@ def new_livre(request):
     return render(request, 'new_livre.html', data)
 #
 @login_required()
-def livres(request, category_id):
+def livres(request, genre_id):
     livres = Livre.objects.filter(genres__id=genre_id)
     return render(request, 'livres.html', {'livres': livres})
 
@@ -59,7 +59,7 @@ def new_genre(request):
         if form.is_valid():
             name = request.POST["name"]
             Genre.objects.create(user=request.user, name =name)
-            return redirect("/livres")
+            return redirect("/genres")
     else:
         form = GenreForm()
 
@@ -71,13 +71,14 @@ def genres(request):
     genres= Genre.objects.filter(user=request.user)
     return render(request, 'genres.html', {'genres': genres})
 
-def map(request, location_id):
-    location = Livre.objects.filter(id=location_id)
+def map(request, livre_id):
+    location = Livre.objects.filter(id=livre_id)
     for place in location:
         country = place.country
+        author = place.author
         city = place.city
         street = place.street
         streetnum = place.streetnum
-        address ='{}, {}, {}, {}'.format(country, city, street, streetnum)
+        address ='{}, {}, {},{}, {}'.format(country, author, city, street, streetnum)
 
     return render (request, 'map.html', {'address': address})
