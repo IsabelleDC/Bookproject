@@ -71,6 +71,8 @@ def genres(request):
     genres= Genre.objects.filter(user=request.user)
     return render(request, 'genres.html', {'genres': genres})
 
+
+
 def map(request, livre_id):
     location = Livre.objects.filter(id=livre_id)
     for place in location:
