@@ -1,14 +1,15 @@
-{%  extends 'base_template.html' %}
+{% extends 'base_template.html' %}
 
 {%  block content %}
-<h1>
-    Hi {{ user.username }}, these are the genres :
-</h1>
+<div id="genre-background">
+
+    <h1>
+        Choose your next destination...<br>
+    </h1>
     <ul>
     {% for genre in genres%}
-    <li><a href="{% url 'livres' genre.id %}">{{ genre.name }}</a></li>
+        <li> <a class="LIST" href="{% url 'livres' genre.id %}">{{ genre.name }}</a></li>
     {% endfor %}
-
-
     </ul>
+</div>
 {% endblock content %}

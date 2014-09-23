@@ -1,0 +1,65 @@
+
+body {
+    background-image: url('../img/background.jpg');
+    font-family: "lucida grande",Helvetica,Arial,sans-serif; !important;
+}
+
+footer{
+    margin-bottom: 100px !important;
+}
+
+#genre-background {
+    background-color: aliceblue;
+    margin: 110px;
+    padding-left: 8px;
+    padding-top: 6px;
+    padding-bottom: 12px;
+    border-radius: 8px;
+    text-align: center;
+    opacity: 0.7;
+    color:darkblue;
+    font-family: "lucida grande",Helvetica,Arial,sans-serif;
+}
+#genre-background h1{
+    color:darkblue;
+    font-size:36px;
+}
+
+#genre-background h2{
+    color:darkblue;
+    font-size:24px;
+}
+.LIST{
+    color: darkblue;
+    font-size:24px;
+}
+.welcome{
+    text-align: center;
+    font-size:28px;
+    color:darkblue;
+    font-family: "lucida grande",Helvetica,Arial,sans-serif;
+}
+
+li {
+    list-style-type: none;
+}
+
+.book-row {
+    width: 49%;
+    display: inline-block;
+    padding: 3px;
+    color:darkblue;
+}
+.container{
+    padding-right: 15px;
+    padding-left: 500px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+.navbar-default {
+    background-color: A7DBD8;
+    border-color: black;
+}

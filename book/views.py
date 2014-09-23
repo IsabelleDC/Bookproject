@@ -36,8 +36,8 @@ def register(request):
 
 @login_required()
 def new_livre(request):
-    if request.method =='POST':
-        form = LivreForm(request.POST)
+    if request.method == 'POST':
+        form = LivreForm(request.POST, request.FILES)
         if form.is_valid():
             if form.save():
                 return redirect("/genres")
@@ -51,6 +51,8 @@ def new_livre(request):
 def livres(request, genre_id):
     livres = Livre.objects.filter(genres__id=genre_id)
     return render(request, 'livres.html', {'livres': livres})
+
+
 
 @login_required()
 def new_genre(request):
@@ -72,6 +74,11 @@ def genres(request):
     return render(request, 'genres.html', {'genres': genres})
 
 
+@login_required()
+def visitor(request):
+    visitors= Visitor.objects.filter(user=request.user)
+    return render(request, 'profile.html', {'visitors': visitors})
+
 
 def map(request, livre_id):
     location = Livre.objects.filter(id=livre_id)
@@ -79,8 +86,8 @@ def map(request, livre_id):
         country = place.country
         author = place.author
         city = place.city
-        street = place.street
-        streetnum = place.streetnum
-        address ='{}, {}, {},{}, {}'.format(country, author, city, street, streetnum)
+        # street = place.street
+        # streetnum = place.streetnum
+        address ='{}, {},{},'.format(city, country, author,)
 
-    return render (request, 'map.html', {'address': address})
+    return render (request, 'map.html', {'country': country})

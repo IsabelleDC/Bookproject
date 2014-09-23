@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'book',
     'easy_maps',
     'geoposition',
+    'bootstrap3',
 
 )
 
@@ -97,12 +98,11 @@ DEFAULT_FROM_EMAIL = 'isabellrey@gmail.com'
 
 AUTH_USER_MODEL = 'book.Visitor'
 
-STATIC_URL = '/static/'
 
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+DATABASES['default'] = dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -110,18 +110,29 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
-# Static asset configuration
-import os
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = 'staticfiles'
-STATIC_URL = '/static/'
-
-
 EASY_MAPS_CENTER = (-41.3, 32)
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.7/howto/static-files/
+
+LOGIN_REDIRECT_URL = 'profile'
+
+LOGIN_URL = 'login'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'isablabla@gmail.com'
+EMAIL_HOST_PASSWORD = 'isablabla'
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = 'isabellrey@gmail.com'
+
+AUTH_USER_MODEL = 'book.Visitor'
+
+STATIC_URL = '/static/'
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, "static", *MEDIA_URL.strip("/").split("/"))
 
 try:
     from local_settings import *

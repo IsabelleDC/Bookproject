@@ -1,16 +1,17 @@
 {%  extends 'base_template.html' %}
+{% load staticfiles %}
 
 {%  block content %}
-<h1>
-    Hi {{ user.username }}, these are your books :
-</h1>
-    <ul>
+    <div id="genre-background">
+        <h1>
+    Look at the best travel books for your next trip
+        </h1>
 
-    {% for livre in livres%}
-
-    <li><img width='100px'src="/static/img/{{livre.image}}"> <a href="{% url 'map' livre.id %}">{{ livre.name }} </a>{{ livre.streetnum }}, {{ livre.street }}, {{ livre.city }}, {{ livre.country }} </br>
-
-
+    {% for livre in livres %}
+        <div class="book-row">
+            <img width='100px' src ="/static/img/{{livre.image}}" /><a href="{% url 'map' livre.id %}">{{ livre.name }}</a> {{ livre.author }}, {{ livre.city }}, {{ livre.country }}
+        </div>
     {% endfor %}
-
+</div>
 {% endblock content %}
+

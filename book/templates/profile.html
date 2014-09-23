@@ -1,7 +1,16 @@
 {%  extends 'base_template.html' %}
+{% load staticfiles %}
 
 {%  block content %}
-<h1>
-    Welcome {{ user.username }} !!!
-</h1>
+    <div id="genre-background">
+        <h1>
+    Hello {{ user.username }}
+        </h1>
+
+    {% for visitor in visitors %}
+{#        <div class="book-row">#}
+            <img width='100px' src ="/static/img/{{visitor.profile_picture}}" />
+        </div>
+    {% endfor %}
+{#</div>#}
 {% endblock content %}

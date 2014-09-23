@@ -1,4 +1,6 @@
+from django.conf import settings
 from django.conf.urls import patterns, include, url
+from django.conf.urls.static import static
 from django.contrib import admin
 
 urlpatterns = patterns('',
@@ -25,10 +27,7 @@ urlpatterns = patterns('',
     url(r'^genres/$', 'book.views.genres', name='genres'),
     url(r'^map/(?P<livre_id>\w+)/$', 'book.views.map', name='map'),
 
-
-
-
-
-
-
 )
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.STATIC_ROOT)
