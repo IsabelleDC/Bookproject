@@ -85,21 +85,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-
-# LOGIN_REDIRECT_URL = 'profile'
-#
-# LOGIN_URL = 'login'
-# EMAIL_USE_TLS = True
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_HOST_USER = 'isablabla@gmail.com'
-# EMAIL_HOST_PASSWORD = 'isablabla'
-# EMAIL_PORT = 587
-# DEFAULT_FROM_EMAIL = 'isabellrey@gmail.com'
-#
-# AUTH_USER_MODEL = 'book.Visitor'
-
-
-
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
 DATABASES['default'] = dj_database_url.config()
@@ -118,13 +103,7 @@ EASY_MAPS_CENTER = (-41.3, 32)
 
 LOGIN_REDIRECT_URL = 'profile'
 
-LOGIN_URL = 'login'
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'isablabla@gmail.com'
-EMAIL_HOST_PASSWORD = 'isablabla'
-EMAIL_PORT = 587
-DEFAULT_FROM_EMAIL = 'isabellrey@gmail.com'
+
 
 AUTH_USER_MODEL = 'book.Visitor'
 
