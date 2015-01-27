@@ -1,7 +1,13 @@
 
+.navbar-default {
+    background-color: aliceblue;
+    border-color: grey;
+}
+
 body {
-    background-image: url('../img/background.jpg');
-    font-family: "lucida grande",Helvetica,Arial,sans-serif; !important;
+/*    background-image: url('../img/background.jpg');*/
+    background-color: #0abb78;
+    font-family: "lucida grande",Helvetica,Arial,sans-serif;
 }
 
 footer{
@@ -59,7 +65,4 @@ li {
 
 
 
-.navbar-default {
-    background-color: A7DBD8;
-    border-color: black;
-}
+
